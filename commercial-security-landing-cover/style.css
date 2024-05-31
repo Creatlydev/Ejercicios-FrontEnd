@@ -1,0 +1,171 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font: inherit;
+    color: inherit;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+body {
+    min-height: 100vh;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #3d3d3d;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin-inline: auto;
+    padding: 0 1.5rem;
+}
+
+.header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 700;
+}
+
+.logo__graphic {
+    width: 64px;
+    height: 64px;
+}
+
+.cta {
+    padding: .5rem 1.5rem;
+    font-weight: 700;
+    border: 2px solid #3d3d3d;
+}
+
+.main {
+    min-height: calc(100vh - 80px);
+    padding-bottom: 2rem;
+}
+
+.cover {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+    gap: 5rem;
+    align-items: center;
+}
+
+.cover__graphic,
+.cover__content {
+    flex: 1;
+    min-width: 200px;
+}
+
+.cover__graphic {
+    height: 200px;
+    min-width: 350px;
+}
+
+.cover__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.cover__paragraph {
+    line-height: 1.25;
+    font-size: 1.15rem;
+    margin-top: 1rem;
+}
+
+
+/* FEATURES */
+.features {
+    margin-top: 5rem;
+}
+
+.features__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2rem;
+    box-shadow: 0 0 16px 2px rgb(0 0 0 / .03);
+    padding: 1rem 1.5rem;
+}
+
+.feature__number {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    background-color: #3d3d3d;
+    color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    justify-content: center;
+}
+
+.feature__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.feature__title::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #3d3d3d;
+    bottom: -20px;
+}
+
+.feature__paragraph {
+    margin-top: 1rem;
+}
+
+.feature__cta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-weight: 700;
+    transition: gap 300ms;
+    min-width: max-content;
+}
+
+.feature__cta:hover {
+    gap: 3rem;
+}
+
+
+
