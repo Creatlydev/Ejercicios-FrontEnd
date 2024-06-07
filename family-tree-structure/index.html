@@ -12,6 +12,37 @@
 
 <body>
 	<div class="container">
+
+		<!-- SELECCIONA UN TEMA -->
+		<div class="theme">
+			<span>Escoge uno de los siguientes colores</span>
+			<div class="theme__colors">
+				<button id="theme__1" style="--bg-clr: #1d9bf0;"></button>
+				<button id="theme__2" style="--bg-clr: #00b87a;"></button>
+				<button id="theme__3" style="--bg-clr: #f91880;"></button>
+			</div>
+		</div>
+
+		<script>
+			function changeTheme (primary, button) {
+				const root = document.documentElement
+				root.style.setProperty('--primary', primary)
+			}
+
+			theme__1.addEventListener("click", () => {
+				changeTheme('29 155 240')
+			})
+
+			theme__2.addEventListener('click', () => {
+				changeTheme('0 184 122')
+			})
+
+			theme__3.addEventListener("click", () => {
+				changeTheme('249 24 128')
+			})
+		</script>
+
+		<!-- --------------------------------------------------------------------------------------------------------- -->
 		<div class="row">
 			<section class="tree">
 
@@ -38,7 +69,7 @@
 										</a>
 									</li>
 
-									<li class="tree__child  tree__child--lvl03  tree__last-child">
+									<li class="tree__child  tree__child--lvl03">
 										<a href="#" class="tree__node">
 											<img src="images/6.jpg" alt="">
 											<span>GrandFather</span>
@@ -52,7 +83,7 @@
 												</a>
 											</li>
 
-											<li class="tree__child tree__child--lvl04  tree__last-child">
+											<li class="tree__child tree__child--lvl04">
 												<a href="#" class="tree__node">
 													<img src="images/9.jpg" alt="">
 													<span>Great-Grandfather</span>
@@ -64,14 +95,7 @@
 								</ul>
 							</li>
 
-							<li class="tree__child  tree__child--adyacent  tree__child--adyacent-left  tree__child--lvl02">
-								<a href="#" class="tree__node">
-									<img src="images/6.jpg" alt="">
-									<span>Brother</span>
-								</a>
-							</li>
-
-							<li class="tree__child  tree__child--lvl02  tree__last-child">
+							<li class="tree__child  tree__child--lvl02">
 								<a href="#" class="tree__node">
 									<img src="images/4.jpg" alt="">
 									<span>Father</span>
@@ -85,7 +109,7 @@
 										</a>
 									</li>
 
-									<li class="tree__child tree__child--lvl03  tree__last-child">
+									<li class="tree__child tree__child--lvl03">
 										<a href="#" class="tree__node">
 											<img src="images/7.jpg" alt="">
 											<span>GrandFather</span>
@@ -94,14 +118,7 @@
 								</ul>
 							</li>
 
-							<li class="tree__child  tree__child--adyacent  tree__child--adyacent-right  tree__child--lvl02">
-								<a href="#" class="tree__node">
-									<img src="images/9.jpg" alt="">
-									<span>Brother</span>
-								</a>
-							</li>
 
-							
 						</ul>
 
 					</li>
@@ -109,7 +126,7 @@
 				</ul>
 
 			</section>
-		</div>
+		</div>	
 	</div>
 </body>
 
