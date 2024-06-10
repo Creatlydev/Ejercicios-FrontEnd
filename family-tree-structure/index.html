@@ -24,7 +24,7 @@
 		</div>
 
 		<script>
-			function changeTheme (primary, button) {
+			function changeTheme(primary, button) {
 				const root = document.documentElement
 				root.style.setProperty('--primary', primary)
 			}
@@ -44,90 +44,23 @@
 
 		<!-- --------------------------------------------------------------------------------------------------------- -->
 		<div class="row">
-			<section class="tree">
-
+			<section class="tree" id="tree">
 				<ul class="tree__lvl01">
 					<li class="tree__child  tree__child--lvl01">
 						<a href="#" class="tree__node">
 							<img src="images/1.jpg" alt="">
 							<span>Child</span>
 						</a>
-
-						<ul class="tree__lvl02">
-
-							<li class="tree__child  tree__child--lvl02">
-								<a href="#" class="tree__node">
-									<img src="images/2.jpg" alt="">
-									<span>Mother</span>
-								</a>
-
-								<ul class="tree__lvl03">
-									<li class="tree__child  tree__child--lvl03">
-										<a href="#" class="tree__node">
-											<img src="images/3.jpg" alt="">
-											<span>GrandMother</span>
-										</a>
-									</li>
-
-									<li class="tree__child  tree__child--lvl03">
-										<a href="#" class="tree__node">
-											<img src="images/6.jpg" alt="">
-											<span>GrandFather</span>
-										</a>
-
-										<ul class="tree__lvl04">
-											<li class="tree__child tree__child--lvl04">
-												<a href="#" class="tree__node">
-													<img src="images/8.jpg" alt="">
-													<span>Great-Grandmother</span>
-												</a>
-											</li>
-
-											<li class="tree__child tree__child--lvl04">
-												<a href="#" class="tree__node">
-													<img src="images/9.jpg" alt="">
-													<span>Great-Grandfather</span>
-												</a>
-											</li>
-										</ul>
-									</li>
-
-								</ul>
-							</li>
-
-							<li class="tree__child  tree__child--lvl02">
-								<a href="#" class="tree__node">
-									<img src="images/4.jpg" alt="">
-									<span>Father</span>
-								</a>
-
-								<ul class="tree__lvl03">
-									<li class="tree__child tree__child--lvl03">
-										<a href="#" class="tree__node">
-											<img src="images/5.jpg" alt="">
-											<span>GrandMother</span>
-										</a>
-									</li>
-
-									<li class="tree__child tree__child--lvl03">
-										<a href="#" class="tree__node">
-											<img src="images/7.jpg" alt="">
-											<span>GrandFather</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-
-
-						</ul>
-
 					</li>
+
 
 				</ul>
 
 			</section>
-		</div>	
+		</div>
 	</div>
+
+	<script type="module" src="./app.js"></script>
 </body>
 
 </html>
