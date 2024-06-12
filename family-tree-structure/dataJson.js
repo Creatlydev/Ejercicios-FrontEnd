@@ -7,32 +7,11 @@ export const data = [
 
         siblings: [
             {
-                name: 'Jose',
-                relation: 'Tio',
-                position: 'afterbegin',
-                img: 5,
-                order: 2,
-
-                siblings: [],
-                parents: []
-            },
-            {
-                name: 'Mercedes',
-                relation: 'Tia',
+                name: 'Nancy',
+                relation: 'Mother',
                 position: 'beforeend',
-                img: 6,
-                order: 3,
-
-                siblings: [],
-                parents: []
-            }
-            ,
-            {
-                name: 'Marcos',
-                relation: 'Tia',
-                position: 'beforeend',
-                img: 6,
-                order: 4,
+                img: 8,
+                order: 6,
 
                 siblings: [],
                 parents: [
@@ -41,7 +20,7 @@ export const data = [
                         relation: 'Father',
                         position: 'beforeend',
                         img: 9,
-                        order: 8,
+                        order: 7,
         
                         siblings: [],
                         parents: []
@@ -51,23 +30,12 @@ export const data = [
                         relation: 'Mother',
                         position: 'beforeend',
                         img: 8,
-                        order: 9,
+                        order: 8,
         
                         siblings: [],
                         parents: []
                     }
                 ]
-            }
-            ,
-            {
-                name: 'Rosario',
-                relation: 'Tia',
-                position: 'beforeend',
-                img: 6,
-                order: 5,
-
-                siblings: [],
-                parents: []
             }
         ],
 
@@ -77,7 +45,7 @@ export const data = [
                 relation: 'Father',
                 position: 'beforeend',
                 img: 7,
-                order: 6,
+                order: 2,
 
                 siblings: [],
                 parents: []
@@ -87,7 +55,7 @@ export const data = [
                 relation: 'Mother',
                 position: 'beforeend',
                 img: 8,
-                order: 7,
+                order: 3,
 
                 siblings: [],
                 parents: [
@@ -96,7 +64,7 @@ export const data = [
                         relation: 'Father',
                         position: 'beforeend',
                         img: 9,
-                        order: 8,
+                        order: 4,
         
                         siblings: [],
                         parents: []
@@ -106,7 +74,7 @@ export const data = [
                         relation: 'Mother',
                         position: 'beforeend',
                         img: 8,
-                        order: 9,
+                        order: 5,
         
                         siblings: [],
                         parents: []
