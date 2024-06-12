@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+body {
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #FBFBFB;
+    color: #110D0B;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 1.5rem;
+    margin-inline: auto;
+}
+
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    .nav__item {
+        padding: .5rem 1rem;
+        text-decoration: none;
+        font-weight: 500;
+    }
+}
+
+
+.auth {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.auth-cta {
+    padding: .75rem 1.5rem;
+    font-size: .875rem;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    border: 2px solid #110D0B;
+}
+
+.auth-cta--sign {
+    background-color: #110D0B;
+    color: #FBFBFB;
+}
+
+
+
+/* SECTION COVER  */
+.cover {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    gap: 2rem;
+    padding-top: 2.5rem;
+}
+
+.cover__graphic,
+.cover__content {
+    flex: 1;
+}
+
+.cover__title {
+    font-size: 5rem;
+    font-size: clamp(2rem, 4vw + .5rem, 5rem);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.cover__graphic {
+    max-width: 550px;
+}
+
+.cover__content {
+    padding: 2rem 2rem 0;
+    align-self: start;
+    width: 100%;
+}
+
+.cover__paragraph {
+    margin-top: 1.5rem;
+    font-size: 1.15rem;
+    text-wrap: balance;
+}
+
+/* FORM */
+.form {
+    margin-top: 1.5rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form__field-group {
+    border: 2px solid #110D0B;
+    border-radius: 2rem;
+    width: 100%;
+    max-width: 450px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form__field-input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding: .25rem .25rem .25rem 1.5rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+.form__field-btn {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    background-color: #583aff;
+    font-weight: 600;
+    color: #FBFBFB;
+    padding: .75rem 1.5rem;
+}
+
+.cover__footer {
+    margin-top: 4rem;
+}
+
+.cover__footer .cover__paragraph {
+    font-size: 1rem;
+    color: #373434;
+}
+
+
+
+/* slider */
+.slider {
+    margin-top: 2rem;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+            transparent,
+            #000 10% 50%,
+            transparent);
+}
+
+.slider__list {
+    display: flex;
+    height: var(--height);
+    gap: 1rem;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+    z-index: -1;
+}
+
+.slider__item {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+    opacity: .5;
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: calc(var(--width) * -1);
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .cover__graphic {
+        display: none;
+    }
+
+    .cover__content {
+        padding: 0;
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .auth-cta {
+        padding: .5rem 1rem;
+    }
+
+    .cover__paragraph {
+        color: 1rem;
+        text-wrap: unset;
+    }
+
+    .form__field-group {
+        font-size: .75rem;
+    }
+
+    .form__field-btn {
+        padding: .5rem 1rem;
+    }
+}

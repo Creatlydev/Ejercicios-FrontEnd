@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Cover Design</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font  -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <!-- <img src="./logo.png" alt="" class="logo__img"> -->
+                <span class="logo__txt">taskit</span>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li>
+                        <a href="#" class="nav nav__item">Product</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav nav__item">Learn</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav nav__item">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav nav__item">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="auth">
+                <button class="auth-cta auth-cta--login">Log in</button>
+                <button class="auth-cta auth-cta--sign">Sign up</button>
+            </section>
+        </header>
+
+        <main class="main">
+            <section class="cover">
+                <div class="cover__graphic">
+                    <img src="./graphic.png" alt="" class="cover__graphic-img">
+                </div>
+
+                <div class="cover__content">
+                    <h1 class="cover__title">
+                        Unlock the
+                        power of
+                        teamwork
+                    </h1>
+
+                    <p class="cover__paragraph">
+                        Accomplish project goals in time within a fun
+                        and easy to use collaborating environment
+                    </p>
+                    <form action="#" method="post" class="form">
+                        <div class="form__field-group">
+                            <input autocomplete="off" type="email" name="email" class="form__field-input" id="email"
+                                placeholder="Enter your better email">
+                            <input type="submit" value="Get started" class="form__field-btn">
+                        </div>
+                    </form>
+
+                    <!-- footer -->
+                    <footer class="cover__footer">
+                        <p class="cover__paragraph">
+                            Largest companies use Taskit to work efficiently
+                        </p>
+
+                        <section class="slider" style="
+                                --width: 100px; 
+                                --height: 50px;
+                                --quantity: 5;
+                        ">
+                            <ul class="slider__list">
+                                <li class="slider__item" style="--position: 1;">
+                                    <img src="./images/slider1_1.png" alt="">
+                                </li>
+                                <li class="slider__item" style="--position: 2;">
+                                    <img src="./images/slider1_2.png" alt="">
+                                </li>
+                                <li class="slider__item" style="--position: 3;">
+                                    <img src="./images/slider1_3.png" alt="">
+                                </li>
+                                <li class="slider__item" style="--position: 4;">
+                                    <img src="./images/slider1_4.png" alt="">
+                                </li>
+                                <li class="slider__item" style="--position: 5;">
+                                    <img src="./images/slider1_5.png" alt="">
+                                </li>
+                            </ul>
+                        </section>
+                    </footer>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
