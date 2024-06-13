@@ -4,11 +4,18 @@
 	font: inherit;
 	box-sizing: border-box;
 	color: inherit;
+	line-height: 1;
 }
 
 ul,
 li {
 	list-style: none;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 
 :root {
@@ -54,7 +61,7 @@ body {
 	gap: 1.5rem;
 }
 
-.theme__colors > button {
+.theme__colors>button {
 	cursor: pointer;
 	flex: 1;
 	height: 30px;
@@ -147,6 +154,7 @@ ul[class^="tree__lvl"] {
 	border: 1px solid var(--primary-color);
 	padding: 10px;
 	display: inline-grid;
+	place-content: center;
 	border-radius: 5px;
 	text-decoration-line: none;
 	border-radius: 5px;
@@ -155,6 +163,10 @@ ul[class^="tree__lvl"] {
 	backdrop-filter: blur(2px);
 	box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
 	color: #94a0b4;
+	position: relative;
+	z-index: 100;
+	min-width: 120px;
+	min-height: 150px;
 }
 
 .tree__node img {
@@ -172,12 +184,59 @@ ul[class^="tree__lvl"] {
 	font-weight: 500;
 }
 
+.btn-add {
+	--ratio: 30px;
+	position: absolute;
+	width: var(--ratio);
+	height: var(--ratio);
+	display: grid;
+	place-content: center;
+	border-radius: 50%;
+	background-color: #f2f2f2;
+	transform: scale(0);
+	transition: transform 300ms;
+	z-index: 100;
+
+	svg {
+		pointer-events: none;
+	}
+}
+
+.btn-add--up {
+	top: calc(var(--ratio)/2 * -1);
+	left: calc(50% - calc(var(--ratio)/2));
+}
+
+.btn-add--right {
+	bottom: calc(50% - calc(var(--ratio)/2));
+	right: calc(var(--ratio)/2 * -1);
+}
+
+.btn-add--down {
+	bottom: calc(var(--ratio)/2 * -1);
+	left: calc(50% - calc(var(--ratio)/2));
+}
+
+.btn-add--left {
+	bottom: calc(50% - calc(var(--ratio)/2));
+	left: calc(var(--ratio)/2 * -1);
+}
+
+
 /*Hover-Section*/
 .tree__node:hover,
 .tree__node:hover span,
 .tree__node:hover+ul .tree__node {
 	background: var(--hv-bg-color);
 	color: var(--hv-primary-color);
+}
+
+.tree__node:hover .btn-add {
+	transform: scale(1);
+
+	&:hover {
+		transform: scale(1.2);
+	}
 }
 
 .tree__node:hover+ul li::after,

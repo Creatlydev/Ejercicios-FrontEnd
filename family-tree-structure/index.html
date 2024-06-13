@@ -49,18 +49,31 @@
 			<section class="tree" id="tree">
 				<ul class="tree__lvl01">
 					<li class="tree__child  tree__child--lvl01">
-						<a href="#" class="tree__node">
+						<div href="#" class="tree__node">
 							<img src="images/1.jpg" alt="">
 							<span>Child</span>
-						</a>
+							<button class="btn-add btn-add--down" id="btnDown">+</button>
+
+						</div>
 					</li>
-
-
 				</ul>
 
 			</section>
 		</div>
 	</div>
+
+	<!-- TEMPLATE DE TREE__NODE -->
+	<template id="template-node">
+		<div class="tree__node">
+			<img src="" alt="">
+			<span></span>
+
+			<button class="btn-add btn-add--up"></button>
+			<button class="btn-add btn-add--right"></button>
+			<button class="btn-add btn-add--down"></button>
+			<button class="btn-add btn-add--left"></button>
+		</div>
+	</template>
 
 	<script type="module" src="./app.js"></script>
 </body>

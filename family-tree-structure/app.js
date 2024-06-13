@@ -1,4 +1,5 @@
 import { data } from "./dataJson.js";
+import { diamondPlus } from "./icons.js";
 
 // Elemento 'ul' raiz del arbol 
 const treeRootNode = document.getElementById('tree').children[0];
@@ -38,7 +39,7 @@ function drawDataFromJson(nodeData, rootNode) {
  * Mismos @params de la funcion @drawDataFromJson
  */
 function drawNodes(childNodeData, rootNode) {
-    insertChild(childNodeData.position, createNewChild(childNodeData.name, childNodeData.relation, childNodeData.img, childNodeData.order), rootNode);
+    insertChild(childNodeData, rootNode);
     if (childNodeData.parents.length) {
         drawDataFromJson(childNodeData, rootNode);
     }
@@ -50,8 +51,18 @@ function drawNodes(childNodeData, rootNode) {
  * @returns nuevo nivel creado 'UL'
  */
 function drawNewLevel(nodeData) {
+    if (!nodeData.order) {
+        let newLevelRootNode = createNewLevel(nodeData)
+        return newLevelRootNode
+    }
     let newLevelRootNode = createNewLevel(nodeIdentifiers[nodeData.order].element);
     return newLevelRootNode;
+}
+
+function addEventToBtn(btnElement) {
+    btnElement.addEventListener('click', (e) => {
+        addNewNodo(e.target.parentNode, e.target.parentNode.parentNode)
+    })
 }
 
 /**
@@ -63,26 +74,35 @@ function drawNewLevel(nodeData) {
  * @returns nuevo elemento hijo
  */
 function createNewChild(name, relation, image, order) {
-    let childElement = document.createElement('li');
-    childElement.classList.add('tree__child');
+    let childNode = document.createElement('li')
+    childNode.classList.add('tree__child')
+    let cloneTemplate = document.getElementById('template-node').content.cloneNode(true)
+    let treeNode = cloneTemplate.querySelector('.tree__node')
+    let imgNode = cloneTemplate.querySelector('img')
+    imgNode.setAttribute('src', `images/${image}.jpg`)
+    imgNode.setAttribute('alt', `Foto de ${name}`)
+    let textNode = cloneTemplate.querySelector('span')
+    textNode.innerText = name;
+    // Buttons
+    let btnUp = cloneTemplate.querySelector('.btn-add--up')
+    btnUp.innerHTML = diamondPlus
+    let btnRight = cloneTemplate.querySelector('.btn-add--right')
+    btnRight.innerHTML = diamondPlus
+    let btnDown = cloneTemplate.querySelector('.btn-add--down')
+    btnDown.innerHTML = diamondPlus
+    let btnLeft = cloneTemplate.querySelector('.btn-add--left')
+    btnLeft.innerHTML = diamondPlus
 
-    let treeNodeLink = document.createElement('a');
-    treeNodeLink.setAttribute('href', '#');
-    treeNodeLink.classList.add('tree__node');
+    addEventToBtn(btnUp)
+    addEventToBtn(btnRight)
+    addEventToBtn(btnDown)
+    addEventToBtn(btnLeft)
 
-    let imgElement = document.createElement('img');
-    imgElement.setAttribute('src', `images/${image}.jpg`);
+    childNode.append(treeNode)
 
-    let spanElement = document.createElement('span');
-    spanElement.innerText = name;
+    nodeIdentifiers[order] = { relation: relation, element: childNode };
 
-    treeNodeLink.append(imgElement, spanElement);
-    childElement.append(treeNodeLink);
-
-    // Agregar identificador de este nuevo nodo creado
-    nodeIdentifiers[order] = { relation: relation, element: childElement };
-
-    return childElement;
+    return childNode;
 }
 
 /**
@@ -102,12 +122,53 @@ function createNewLevel(nodeElement) {
 /**
  * Insertar elemento creado al arbol
  * @param {*} position: puede ser [beforeend | afterbegin | afterend | beforebegin]
- * @param {*} childElement: elemento creado listo para insertar al DOM 
  * @param {*} rootNode: elemento del DOM donde se insertara childElement
  */
-const insertChild = (position, childElement, rootNode) => {
-    rootNode.insertAdjacentElement(position, childElement);
+const insertChild = (childNode, rootNode) => {
+    rootNode.insertAdjacentElement(childNode.position, createNewChild(childNode.name, childNode.relation, childNode.img, childNode.order));
 };
 
 // Iniciar el árbol
 initializeTree();
+
+
+
+
+// ============================================
+// Eventos para agregar nuevo nodos al dar clic
+// en los distintos lados de un nodo existente
+// =============================================
+function addEventToBtn2(elements) {
+    elements.forEach(element => {
+        document.querySelector(element).addEventListener('click', (e) => {
+            addNewNodo(e.target.parentNode, e.target.parentNode.parentNode)
+        })
+    })
+}
+
+
+addEventToBtn2(['.btn-add--down'])
+
+
+function verifyExistAdyacentLevel(nodoSelected) {
+    return nodoSelected.nextElementSibling
+}
+
+function addNewNodo(nodoSelected, childNode) {
+    let lvl = verifyExistAdyacentLevel(nodoSelected)
+    let order = Object.keys(nodeIdentifiers)[Object.keys(nodeIdentifiers).length - 1]
+    order = parseInt(order) + 1
+
+    if (!lvl) {
+        lvl = drawNewLevel(childNode)
+    }
+    insertChild(
+        {
+            name: 'Zoe',
+            relation: 'Unknow',
+            position: 'beforeend',
+            img: 8,
+            order: order
+        }, lvl
+    )
+}
