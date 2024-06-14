@@ -1,25 +1,30 @@
 import { insertChild } from "./createElements.js";
 
 function drawDataFromJson(nodeData, rootNode) {
+    if (nodeData.order === 1) {
+        // Solo se ejecuta una vez para dibujar el nodo raiz del JSON
+        insertChild(nodeData, rootNode);
+    }
+
     nodeData.siblings.forEach(siblingNode => {
-        drawNodes(siblingNode, rootNode);
+        drawNode(siblingNode, rootNode);
     });
 
-    if (nodeData.parents.length) {
+    if (nodeData.laterNodes.length) {
         let newLevelRootNode = drawNewLevel(nodeData);
-        nodeData.parents.forEach(parentNode => {
-            drawNodes(parentNode, newLevelRootNode);
+        nodeData.laterNodes.forEach(parentNode => {
+            drawNode(parentNode, newLevelRootNode);
         });
     }
 }
 
-function drawNodes(childNodeData, rootNode) {
+function drawNode(childNodeData, rootNode) {
     insertChild(childNodeData, rootNode);
-    if (childNodeData.parents.length) {
+    if (childNodeData.laterNodes.length) {
         drawDataFromJson(childNodeData, rootNode);
     }
 }
 
 
 
-export { drawDataFromJson, drawNodes };
+export { drawDataFromJson, drawNode };

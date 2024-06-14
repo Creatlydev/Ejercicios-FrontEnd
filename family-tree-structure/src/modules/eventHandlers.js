@@ -6,12 +6,4 @@ function addEventToBtn(btnElement) {
     });
 }
 
-function addEventToBtn2(elements) {
-    elements.forEach(element => {
-        document.querySelector(element).addEventListener('click', (e) => {
-            addNewNode(e.target.parentNode, e.target.parentNode.parentNode);
-        });
-    });
-}
-
-export { addEventToBtn, addEventToBtn2 };
+export { addEventToBtn };
