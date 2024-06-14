@@ -6,7 +6,7 @@ function drawDataFromJson(nodeData, rootNode) {
         insertChild(nodeData, rootNode);
     }
 
-    nodeData.siblings.forEach(siblingNode => {
+    nodeData.adyacent.forEach(siblingNode => {
         drawNode(siblingNode, rootNode);
     });
 

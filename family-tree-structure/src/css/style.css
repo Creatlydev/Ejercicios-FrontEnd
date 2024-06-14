@@ -78,7 +78,7 @@ body {
 	text-align: center;
 }
 
-ul[class^="tree__lvl"] {
+.tree__lvl {
 	padding-top: 20px;
 	position: relative;
 	display: flex;
@@ -118,8 +118,15 @@ ul[class^="tree__lvl"] {
 .tree__child:only-child::after,
 .tree__child:only-child::before,
 .tree__child:first-child::before,
-.tree__child:last-child::after {
+.tree__child:last-child::after,
+li:not(.tree__adyacent-child)::before,
+li:not(.tree__adyacent-child)::after {
 	display: none;
+}
+
+li.tree__simple-child::before,
+li.tree__simple-child::after {
+	display: block;
 }
 
 .tree__child:last-child::before {
@@ -160,7 +167,7 @@ ul ul:has(> .tree__child:only-child)::before {
 	display: inline-grid;
 	place-content: center;
 	border-radius: 5px;
-	transition: .5s;
+	transition: 300ms;
 	background-color: var(--bg-color);
 	backdrop-filter: blur(2px);
 	box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
@@ -169,6 +176,10 @@ ul ul:has(> .tree__child:only-child)::before {
 	z-index: 100;
 	min-width: 120px;
 	min-height: 150px;
+
+}
+.tree__node--active {
+	border: 2px solid rgb(var(--primary));
 }
 
 .tree__node img {
@@ -184,6 +195,7 @@ ul ul:has(> .tree__child:only-child)::before {
 	font-size: 12px;
 	letter-spacing: 1px;
 	font-weight: 500;
+	pointer-events: none;
 }
 
 .btn-add {

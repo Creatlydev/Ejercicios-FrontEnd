@@ -1,9 +1,15 @@
+import { handleNodeClick } from "./classTogles.js";
 import { addNewNode } from "./utils.js";
 
-function addEventToBtn(btnElement) {
+function addEventToBtn(btnElement, position) {
     btnElement.addEventListener('click', (e) => {
-        addNewNode(e.target.parentNode, e.target.parentNode.parentNode);
+        e.stopPropagation() // Este metodo evita que el evento se propage hacia los elementos padre
+        addNewNode(e.target.parentNode, e.target.parentNode.parentNode, position);
     });
 }
 
-export { addEventToBtn };
+function addClickEventToNode(element) {
+    element.addEventListener('click', handleNodeClick);
+}
+
+export { addEventToBtn, addClickEventToNode };
