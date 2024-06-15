@@ -6,12 +6,18 @@ function verifyExistAdyacentLevel(nodoSelected) {
 }
 
 function addNewNode(nodoSelected, childNode, position) {
-    let lvl = verifyExistAdyacentLevel(nodoSelected);
+    console.log(nodoSelected)
+    let lvl
     let order = Object.keys(nodeIdentifiers)[Object.keys(nodeIdentifiers).length - 1];
-    order = parseInt(order) + 1;
+    if (!['RIGHT', 'LEFT'].includes(position)) {
+        lvl = verifyExistAdyacentLevel(nodoSelected);
+        order = parseInt(order) + 1;
 
-    if (!lvl) {
-        lvl = createNewLevel(childNode);
+        if (!lvl) {
+            lvl = createNewLevel(childNode);
+        }
+    } else {
+        lvl = nodoSelected
     }
     insertChild(
         {

@@ -3,7 +3,6 @@ import { addClickEventToNode, addEventToBtn } from "./eventHandlers.js";
 import { diamondPlus } from "/icons.js";
 
 function createNewChild(name, relation, image, order, position) {
-    console.log(position);
     let childNode = document.createElement("li");
     childNode.classList.add(
         "tree__child",
@@ -47,7 +46,9 @@ function createNewChild(name, relation, image, order, position) {
 }
 
 function createNewLevel(nodeData) {
+    // Esta condicion evalua si el parametro nodeData vienen de DATAJSON.js
     if (nodeData.order) {
+        // solo se ejecuta cuando se este dibujando datos del objeto DATAJSON.js
         nodeData = nodeIdentifiers[nodeData.order].element;
     }
 
@@ -58,6 +59,7 @@ function createNewLevel(nodeData) {
 }
 
 const insertChild = (childNode, rootNode, position) => {
+    
     rootNode = position === 'RIGHT' || position === 'LEFT' ? rootNode.parentNode : rootNode
 
     rootNode.insertAdjacentElement(

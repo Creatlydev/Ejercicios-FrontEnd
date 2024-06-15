@@ -1,4 +1,4 @@
-import { insertChild } from "./createElements.js";
+import { createNewLevel, insertChild } from "./createElements.js";
 
 function drawDataFromJson(nodeData, rootNode) {
     if (nodeData.order === 1) {
@@ -11,7 +11,7 @@ function drawDataFromJson(nodeData, rootNode) {
     });
 
     if (nodeData.laterNodes.length) {
-        let newLevelRootNode = drawNewLevel(nodeData);
+        let newLevelRootNode = createNewLevel(nodeData);
         nodeData.laterNodes.forEach(parentNode => {
             drawNode(parentNode, newLevelRootNode);
         });
