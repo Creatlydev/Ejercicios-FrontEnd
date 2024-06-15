@@ -1,27 +1,38 @@
-import { createNewLevel, insertChild } from "./createElements.js";
+import { createNewLevel, insertNewElement } from "./createElements.js";
+import { nodeIdentifiers } from "./initializeTree.js";
 
-function drawDataFromJson(nodeData, rootNode) {
-    if (nodeData.order === 1) {
+/**
+ * Dibuja los elementos a partir de un objeto JSON
+ * @param {*} nodeObjetData : Objeto {} con la informacion del nodo ubicado en el JSON
+ * @param {*} rootNode : nodo raiz del objeto JSON
+ */
+function drawDataFromJson(nodeObjetData, rootNode) {
+    if (nodeObjetData.order === 1) {
         // Solo se ejecuta una vez para dibujar el nodo raiz del JSON
-        insertChild(nodeData, rootNode);
+        insertNewElement(nodeObjetData, rootNode);
     }
 
-    nodeData.adyacent.forEach(siblingNode => {
-        drawNode(siblingNode, rootNode);
+    nodeObjetData.adyacent.forEach(adyacentNode => {
+        drawNode(adyacentNode, rootNode);
     });
 
-    if (nodeData.laterNodes.length) {
-        let newLevelRootNode = createNewLevel(nodeData);
-        nodeData.laterNodes.forEach(parentNode => {
-            drawNode(parentNode, newLevelRootNode);
+    if (nodeObjetData.front.length) {
+        let newRootNode = createNewLevel(nodeIdentifiers[nodeObjetData.order].element); // Nuevo nodo raiz
+        nodeObjetData.front.forEach(frontNode => {
+            drawNode(frontNode, newRootNode);
         });
     }
 }
 
-function drawNode(childNodeData, rootNode) {
-    insertChild(childNodeData, rootNode);
-    if (childNodeData.laterNodes.length) {
-        drawDataFromJson(childNodeData, rootNode);
+/**
+ * 
+ * @param {*} nodeObjectData : Objeto {} con la informacion del nodo ubicado en el JSON
+ * @param {*} rootNode : nodo raiz
+ */
+function drawNode(nodeObjectData, rootNode) {
+    insertNewElement(nodeObjectData, rootNode);
+    if (nodeObjectData.front.length) {
+        drawDataFromJson(nodeObjectData, rootNode);
     }
 }
 

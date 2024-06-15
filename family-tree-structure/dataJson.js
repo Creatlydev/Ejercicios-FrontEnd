@@ -10,7 +10,7 @@ export const data = [
             
         ],
 
-        laterNodes: [
+        front: [
             
         ]
     }

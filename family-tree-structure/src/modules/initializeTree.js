@@ -15,4 +15,4 @@ const initializeTree = () => {
     drawDataFromJson(data[0], treeRootNode);
 };
 
-export { initializeTree, treeRootNode, nodeIdentifiers, positionsObjet };
+export { initializeTree, nodeIdentifiers, positionsObjet };

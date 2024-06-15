@@ -2,13 +2,13 @@ import { nodeIdentifiers } from "./initializeTree.js";
 import { addClickEventToNode, addEventToBtn } from "./eventHandlers.js";
 import { diamondPlus } from "/icons.js";
 
-function createNewChild(name, relation, image, order, position) {
+function createNewElement(name, relation, image, order, btnPosition) {
     let childNode = document.createElement("li");
     childNode.classList.add(
         "tree__child",
-        position === "DOWN"
+        btnPosition === "DOWN"
             ? "tree__simple-child"
-            : position === "RIGHT" || position === "LEFT"
+            : btnPosition === "RIGHT" || btnPosition === "LEFT"
                 ? "tree__adyacent__child"
                 : "-"
     );
@@ -45,33 +45,36 @@ function createNewChild(name, relation, image, order, position) {
     return childNode;
 }
 
-function createNewLevel(nodeData) {
-    // Esta condicion evalua si el parametro nodeData vienen de DATAJSON.js
-    if (nodeData.order) {
-        // solo se ejecuta cuando se este dibujando datos del objeto DATAJSON.js
-        nodeData = nodeIdentifiers[nodeData.order].element;
-    }
-
+/**
+ * 
+ * @param {*} referenceNode : Nodo de referencia donde se creara el nuevo nivel `UL`
+ * @returns nuevo nivel creado [element]
+ */
+function createNewLevel(referenceNode) {
     let newLevel = document.createElement("ul");
     newLevel.classList.add("tree__lvl");
-    nodeData.append(newLevel);
+    referenceNode.append(newLevel);
     return newLevel;
 }
 
-const insertChild = (childNode, rootNode, position) => {
-    
-    rootNode = position === 'RIGHT' || position === 'LEFT' ? rootNode.parentNode : rootNode
+/**
+ * 
+ * @param {*} nodeObjectData : Objeto {} con la informacion del nodo a crear  
+ * @param {*} referenceNode : Este nodo será usado como referencia para la inserción.
+ * @param {*} btnPosition : position del boton en el la interfaz del nodo [UP | RIGHT | LEFT | DOWN] 
+ */
+const insertNewElement = (nodeObjectData, referenceNode, btnPosition) => {
 
-    rootNode.insertAdjacentElement(
-        childNode.position,
-        createNewChild(
-            childNode.name,
-            childNode.relation,
-            childNode.img,
-            childNode.order,
-            position
+    referenceNode.insertAdjacentElement(
+        nodeObjectData.position,
+        createNewElement(
+            nodeObjectData.name,
+            nodeObjectData.relation,
+            nodeObjectData.img,
+            nodeObjectData.order,
+            btnPosition
         )
     );
 };
 
-export { createNewChild, createNewLevel, insertChild };
+export { createNewElement, createNewLevel, insertNewElement };

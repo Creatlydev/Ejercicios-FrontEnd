@@ -1,10 +1,15 @@
 import { handleNodeClick } from "./classTogles.js";
-import { addNewNode } from "./utils.js";
+import { addNewElement } from "./utils.js";
 
-function addEventToBtn(btnElement, position) {
+/**
+ * 
+ * @param {*} btnElement : Buton que ha sido clickeado
+ * @param {*} btnPosition : position del boton en el la interfaz del nodo [UP | RIGHT | LEFT | DOWN]
+ */
+function addEventToBtn(btnElement, btnPosition) {
     btnElement.addEventListener('click', (e) => {
         e.stopPropagation() // Este metodo evita que el evento se propage hacia los elementos padre
-        addNewNode(e.target.parentNode, e.target.parentNode.parentNode, position);
+        addNewElement(e.target.closest('.tree__node'), e.target.closest('.tree__child'), btnPosition);
     });
 }
 
