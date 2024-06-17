@@ -122,11 +122,6 @@ body {
 	display: none;
 }
 
-li.tree__simple-child::before,
-li.tree__simple-child::after {
-	display: block;
-}
-
 .tree__child:has(> .tree__lvl),
 .tree__adyacent-child:has(> .tree__lvl) {
 	padding-inline: 0;

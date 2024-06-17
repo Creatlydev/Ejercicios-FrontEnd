@@ -8,7 +8,7 @@ function createNewElement(name, relation, image, order, btnPosition) {
     childNode.classList.add(
         ['LEFT', 'RIGHT'].includes(btnPosition)
             ? 'tree__adyacent-child'
-            : 'tree__child', 'tree__simple-child'
+            : 'tree__child'
     )
     let cloneTemplate = document
         .getElementById("template-node")
