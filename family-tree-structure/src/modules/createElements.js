@@ -4,14 +4,12 @@ import { diamondPlus } from "/icons.js";
 
 function createNewElement(name, relation, image, order, btnPosition) {
     let childNode = document.createElement("li");
+
     childNode.classList.add(
-        "tree__child",
-        btnPosition === "DOWN"
-            ? "tree__simple-child"
-            : btnPosition === "RIGHT" || btnPosition === "LEFT"
-                ? "tree__adyacent__child"
-                : "-"
-    );
+        ['LEFT', 'RIGHT'].includes(btnPosition)
+            ? 'tree__adyacent-child'
+            : 'tree__child', 'tree__simple-child'
+    )
     let cloneTemplate = document
         .getElementById("template-node")
         .content.cloneNode(true);
