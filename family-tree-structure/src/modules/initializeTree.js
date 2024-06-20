@@ -5,7 +5,7 @@ import { drawDataFromJson } from "./drawNodes.js";
 const treeRootNode = document.getElementById('tree').children[0];
 let nodeIdentifiers = {}
 let positionsObjet = {
-    UP: '',
+    UP: 'afterbegin',
     RIGHT: 'afterend',
     DOWN: 'beforeend',
     LEFT: 'beforebegin'

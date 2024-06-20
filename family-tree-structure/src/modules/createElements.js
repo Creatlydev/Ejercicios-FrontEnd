@@ -5,11 +5,7 @@ import { diamondPlus } from "/icons.js";
 function createNewElement(name, relation, image, order, btnPosition) {
     let childNode = document.createElement("li");
 
-    childNode.classList.add(
-        ['LEFT', 'RIGHT'].includes(btnPosition)
-            ? 'tree__adyacent-child'
-            : 'tree__child'
-    )
+    childNode.classList.add('tree__child')
     let cloneTemplate = document
         .getElementById("template-node")
         .content.cloneNode(true);
@@ -20,19 +16,10 @@ function createNewElement(name, relation, image, order, btnPosition) {
     let textNode = cloneTemplate.querySelector("span");
     textNode.innerText = name;
 
-    let btnUp = cloneTemplate.querySelector(".btn-add--up");
-    btnUp.innerHTML = diamondPlus;
-    let btnRight = cloneTemplate.querySelector(".btn-add--right");
-    btnRight.innerHTML = diamondPlus;
     let btnDown = cloneTemplate.querySelector(".btn-add--down");
     btnDown.innerHTML = diamondPlus;
-    let btnLeft = cloneTemplate.querySelector(".btn-add--left");
-    btnLeft.innerHTML = diamondPlus;
 
-    addEventToBtn(btnUp, "UP");
-    addEventToBtn(btnRight, "RIGHT");
     addEventToBtn(btnDown, "DOWN");
-    addEventToBtn(btnLeft, "LEFT");
 
     // Evento click a nodos
     addClickEventToNode(treeNode)

@@ -86,14 +86,12 @@ body {
 	align-items: start;
 }
 
-.tree__child,
-.tree__adyacent-child {
+.tree__child {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	position: relative;
 	padding: 10px;
-	transition: .5s;
 	height: auto;
 }
 
@@ -174,7 +172,7 @@ ul ul:has(> .tree__child:only-child)::before {
 	z-index: 100;
 	min-width: 120px;
 	min-height: 150px;
-
+	transition: .5s;
 }
 .tree__node--active {
 	border: 2px solid rgb(var(--primary));
