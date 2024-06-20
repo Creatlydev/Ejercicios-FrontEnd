@@ -237,7 +237,10 @@ ul ul:has(> .tree__child:only-child)::before {
 /*Hover-Section*/
 .tree__node:hover,
 .tree__node:hover span,
-.tree__node:hover+ul .tree__node {
+.tree__node:hover+ul .tree__node,
+.tree__node--active,
+.tree__node--active span,
+.tree__node--active+ul .tree__node {
 	background: var(--hv-bg-color);
 	color: var(--hv-primary-color);
 }
@@ -253,6 +256,10 @@ ul ul:has(> .tree__child:only-child)::before {
 .tree__node:hover+ul li::after,
 .tree__node:hover+ul li::before,
 .tree__node:hover+ul::before,
-.tree__node:hover+ul ul::before {
+.tree__node:hover+ul ul::before,
+.tree__node--active + ul li::after,
+.tree__node--active + ul li::before,
+.tree__node--active + ul::before,
+.tree__node--active + ul ul::before {
 	border-color: var(--hv-primary-color);
 }
