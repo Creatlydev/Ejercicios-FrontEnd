@@ -15,6 +15,7 @@ body {
     place-content: center;
     text-align: center;
     background-color: #eff5f4;
+    color: #3d3d3d;
 }
 
 h1 {
@@ -35,14 +36,14 @@ h2>span {
     position: relative;
     display: inline-block;
     margin-inline: .5rem;
-    color: #09f;
+    color: var(--clr);
 
     &::before {
         content: '';
         position: absolute;
         inset: -4px -8px;
         border-radius: 1rem;
-        background-color: rgba(0, 153, 255, 0.201);
+        background-color: var(--clr-transparent);
         z-index: -1;
     }
 }
@@ -70,7 +71,11 @@ h2>span {
     margin-inline: 2rem;
 }
 
-.slider--2 .slider__track {
+.slider:nth-child(even) {
+    border: 2px solid #09f;
+}
+
+.slider:nth-child(even) .slider__track {
     animation-direction: reverse;
 }
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,31 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- FUNETES -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Nanum+Pen+Script&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Nanum+Pen+Script&display=swap">
 
 </head>
+
 <body>
 
     <h1>Slider automatico infinito</h1>
-    <h2>Solo con <span>CSS</span></h2>
+    <h2>con <span style="--clr: #09f;--clr-transparent: rgba(0, 153, 255, 0.2);">CSS</span> & <span
+            style="--clr: hsl(53, 65%, 55%); --clr-transparent: hsla(53, 65%, 55%, 0.2);">JavaScript</span></h2>
+
+    <section class="slider">
+        <ul class="slider__track">
+            <img src="./logos/slider1_1.png" alt="" class="slider__item">
+            <img src="./logos/slider1_2.png" alt="" class="slider__item">
+            <img src="./logos/slider1_3.png" alt="" class="slider__item">
+            <img src="./logos/slider1_4.png" alt="" class="slider__item">
+            <img src="./logos/slider1_5.png" alt="" class="slider__item">
+            <img src="./logos/slider1_6.png" alt="" class="slider__item">
+            <img src="./logos/slider1_7.png" alt="" class="slider__item">
+            <img src="./logos/slider1_8.png" alt="" class="slider__item">
+            <img src="./logos/slider1_9.png" alt="" class="slider__item">
+            <img src="./logos/slider1_10.png" alt="" class="slider__item">
+        </ul>
+    </section>
     
     <section class="slider">
         <ul class="slider__track">
@@ -28,6 +47,9 @@
             <img src="./logos/slider1_9.png" alt="" class="slider__item">
             <img src="./logos/slider1_10.png" alt="" class="slider__item">
         </ul>
+    </section>
+    
+    <section class="slider">
         <ul class="slider__track">
             <img src="./logos/slider1_1.png" alt="" class="slider__item">
             <img src="./logos/slider1_2.png" alt="" class="slider__item">
@@ -42,19 +64,7 @@
         </ul>
     </section>
     
-    <section class="slider slider--2">
-        <ul class="slider__track">
-            <img src="./logos/slider1_1.png" alt="" class="slider__item">
-            <img src="./logos/slider1_2.png" alt="" class="slider__item">
-            <img src="./logos/slider1_3.png" alt="" class="slider__item">
-            <img src="./logos/slider1_4.png" alt="" class="slider__item">
-            <img src="./logos/slider1_5.png" alt="" class="slider__item">
-            <img src="./logos/slider1_6.png" alt="" class="slider__item">
-            <img src="./logos/slider1_7.png" alt="" class="slider__item">
-            <img src="./logos/slider1_8.png" alt="" class="slider__item">
-            <img src="./logos/slider1_9.png" alt="" class="slider__item">
-            <img src="./logos/slider1_10.png" alt="" class="slider__item">
-        </ul>
+    <section class="slider">
         <ul class="slider__track">
             <img src="./logos/slider1_1.png" alt="" class="slider__item">
             <img src="./logos/slider1_2.png" alt="" class="slider__item">
@@ -69,5 +79,17 @@
         </ul>
     </section>
 
+    <!-- SCRIPT -->
+     <script>
+         const sliderContainer = document.querySelectorAll('.slider')
+         
+         sliderContainer.forEach(slider => {
+            const sliderClone = slider.querySelector('.slider__track').cloneNode(true)
+            slider.appendChild(sliderClone)
+        })
+
+     </script>
+
 </body>
+
 </html>
