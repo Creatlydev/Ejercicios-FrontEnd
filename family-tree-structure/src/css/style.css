@@ -71,6 +71,79 @@ body {
 	border: none;
 }
 
+#modal {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: grid;
+	padding: 2.5rem 1.5rem;
+	border: none;
+	border-radius: .5rem;
+	box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+	color: #3d3d3d;
+	&:not([open]) {
+		display: none;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+		text-align: center;
+		font-weight: 500;
+		margin-bottom: 2rem;
+	}
+
+	.data {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.btns {
+		display: flex;
+		gap: .5rem;
+		flex-wrap: wrap;
+		margin-top: 1.5rem;
+	}
+
+	.btn {
+		font-weight: 500;
+		padding: 1rem 2rem;
+		border-radius: .5rem;
+		color: #fff;
+		flex: 1;
+	}
+
+	#btn-submit {
+		background-color: rgb(var(--primary) / .8);
+		font-weight: 500;
+		padding: 1rem 2rem;
+		border-radius: .5rem;
+		color: #fff;
+
+		&:hover {
+			background-color: rgb(var(--primary));
+		}
+	}
+
+	#btn-cancel {
+		border: 1px solid rgb(223 16 85);
+		color: #3d3d3d;
+	}
+
+	.input-name {
+		border: none;
+		background-color: transparent;
+		padding: .5rem 1rem;
+		border: 1px solid rgb(var(--primary) / .5);
+		border-radius: .5rem;
+
+		&:focus {
+			outline: none;
+			border-color: rgb(var(--primary));
+		}
+	}
+}
+
 
 /* TREE */
 .tree {
@@ -175,6 +248,7 @@ ul ul:has(> .tree__child:only-child)::before {
 	min-height: 150px;
 	transition: .5s;
 }
+
 .tree__node--active {
 	border: 2px solid rgb(var(--primary));
 }
@@ -257,9 +331,9 @@ ul ul:has(> .tree__child:only-child)::before {
 .tree__node:hover+ul li::before,
 .tree__node:hover+ul::before,
 .tree__node:hover+ul ul::before,
-.tree__node--active + ul li::after,
-.tree__node--active + ul li::before,
-.tree__node--active + ul::before,
-.tree__node--active + ul ul::before {
+.tree__node--active+ul li::after,
+.tree__node--active+ul li::before,
+.tree__node--active+ul::before,
+.tree__node--active+ul ul::before {
 	border-color: var(--hv-primary-color);
 }

@@ -55,6 +55,19 @@
 		</div>
 	</div>
 
+	<!-- MODAL -->
+	<dialog id="modal">
+		<h2>Completa los siguientes datos</h2>
+		<div class="data">
+			<input type="file" class="input-image">
+			<input type="text" name="name" class="input-name" maxlength="12">
+			<div class="btns">
+				<button class="btn" id="btn-cancel" onclick="this.closest('#modal').close()">Cancelar</button>
+				<button class="btn" id="btn-submit">Agregar nodo</button>
+			</div>
+		</div>
+	</dialog>
+
 	<!-- TEMPLATE DE TREE__NODE -->
 	<template id="template-node">
 		<div class="tree__node">

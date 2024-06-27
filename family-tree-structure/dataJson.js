@@ -6,12 +6,8 @@ export const data = [
         img: 1,
         order: 1,
 
-        adyacent: [
-            
-        ],
-
-        front: [
+        parents: [
             
         ]
     }
-]
+]   

@@ -59,7 +59,7 @@ body {
 
 .container {
     margin-inline: auto; 
-    width: min(100%, 1440px);
+    width: min(100%, 1360px);
     padding-inline: 1.5rem;
 }
 
@@ -149,7 +149,7 @@ body {
 }
 
 .hero__graphic {
-    max-width: 530px;
+    max-width: 550px;
     min-width: min(100%, 530px);
     margin: auto;
 }

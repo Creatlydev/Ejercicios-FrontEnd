@@ -1,5 +1,5 @@
-import { nodeIdentifiers } from "./initializeTree.js";
-import { addClickEventToNode, addEventToBtn } from "./eventHandlers.js";
+import { modalDialog, nodeIdentifiers } from "./initializeTree.js";
+import { addClickEventToNode, addEventToBtn, openModal } from "./eventHandlers.js";
 import { diamondPlus } from "/icons.js";
 
 function createNewElement(name, relation, image, order, btnPosition) {
@@ -19,8 +19,7 @@ function createNewElement(name, relation, image, order, btnPosition) {
     let btnDown = cloneTemplate.querySelector(".btn-add--down");
     btnDown.innerHTML = diamondPlus;
 
-    addEventToBtn(btnDown, "DOWN");
-
+    openModal(modalDialog, btnDown)
     // Evento click a nodos
     addClickEventToNode(treeNode)
 

@@ -13,8 +13,19 @@ function addEventToBtn(btnElement, btnPosition) {
     });
 }
 
+function openModal(modal, btn) {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation() // Este metodo evita que el evento se propage hacia los elementos padre
+        modal.showModal()
+
+        document.getElementById('btn-submit').addEventListener('click', (e) => {
+            addNewElement(btn.closest('.tree__node'), btn.closest('.tree__child'), 'DOWN')
+        })
+    })
+}
+
 function addClickEventToNode(element) {
     element.addEventListener('click', handleNodeClick);
 }
 
-export { addEventToBtn, addClickEventToNode };
+export { addEventToBtn, addClickEventToNode, openModal };

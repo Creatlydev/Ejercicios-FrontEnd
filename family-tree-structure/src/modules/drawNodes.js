@@ -12,14 +12,10 @@ function drawDataFromJson(nodeObjetData, rootNode) {
         insertNewElement(nodeObjetData, rootNode);
     }
 
-    nodeObjetData.adyacent.forEach(adyacentNode => {
-        drawNode(adyacentNode, rootNode);
-    });
-
-    if (nodeObjetData.front.length) {
+    if (nodeObjetData.parents.length) {
         let newRootNode = createNewLevel(nodeIdentifiers[nodeObjetData.order].element); // Nuevo nodo raiz
-        nodeObjetData.front.forEach(frontNode => {
-            drawNode(frontNode, newRootNode);
+        nodeObjetData.parents.forEach(parentNode => {
+            drawNode(parentNode, newRootNode);
         });
     }
 }
@@ -31,7 +27,7 @@ function drawDataFromJson(nodeObjetData, rootNode) {
  */
 function drawNode(nodeObjectData, rootNode) {
     insertNewElement(nodeObjectData, rootNode);
-    if (nodeObjectData.front.length) {
+    if (nodeObjectData.parents.length) {
         drawDataFromJson(nodeObjectData, rootNode);
     }
 }

@@ -3,6 +3,7 @@ import { drawDataFromJson } from "./drawNodes.js";
 
 
 const treeRootNode = document.getElementById('tree').children[0];
+const modalDialog = document.getElementById('modal')
 let nodeIdentifiers = {}
 let positionsObjet = {
     UP: 'afterbegin',
@@ -15,4 +16,4 @@ const initializeTree = () => {
     drawDataFromJson(data[0], treeRootNode);
 };
 
-export { initializeTree, nodeIdentifiers, positionsObjet };
+export { initializeTree, nodeIdentifiers, positionsObjet, modalDialog };
