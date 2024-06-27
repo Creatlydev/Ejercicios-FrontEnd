@@ -63,7 +63,11 @@ h2>span {
 .slider__track {
     padding-block: 1rem;
     display: inline-block;
-    animation: slider 15s linear infinite;
+    animation: slider 20s linear infinite;
+}
+
+.slider:hover .slider__track {
+    animation-play-state: paused!important;
 }
 
 .slider__item {
