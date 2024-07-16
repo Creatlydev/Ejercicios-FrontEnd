@@ -3,5 +3,5 @@ import { listenScroll } from './src/scrollTopButton.js';
 
 window.addEventListener('DOMContentLoaded', (event) => {
   renderExperiences();
-  listenScroll()
+  listenScroll();
 });
