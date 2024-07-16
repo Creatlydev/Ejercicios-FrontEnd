@@ -32,7 +32,7 @@ body {
 
 /* TIMELINE */
 .tmline {
-    margin-block: 4rem;
+    padding-block: 4rem;
 }
 
 .tmline__head {

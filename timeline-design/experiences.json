@@ -1,0 +1,42 @@
+[
+    {
+        "company": {
+            "name": "Amazon Inc",
+            "logo": "./assets/amazon.svg",
+            "alt": "Logo de amazon"
+        },
+        "time_period": "2023 - Current",
+        "job_title": "SR. Front-End Web Designer",
+        "job_description": "Developed responsive web designs, collaborated with cross-functional teams, and ensured high-quality user experience. Worked on complex projects with tight deadlines."
+    },
+    {
+        "company": {
+            "name": "Google Tech",
+            "logo": "./assets/google.svg",
+            "alt": "Logo de google"
+        },
+        "time_period": "2020 - 2023",
+        "job_title": "SR. UX / UI Designer",
+        "job_description": "Designed user interfaces, conducted user research, and improved usability of products. Created wireframes and prototypes, leading to enhanced user satisfaction."
+    },
+    {
+        "company": {
+            "name": "Shopify Inc",
+            "logo": "./assets/shopify.svg",
+            "alt": "Logo de shopify"
+        },
+        "time_period": "2018 - 2020",
+        "job_title": "JR. Front-End Web Designer",
+        "job_description": "Assisted in creating web pages, performed front-end coding, and fixed bugs. Worked closely with senior developers to gain hands-on experience in web development."
+    },
+    {
+        "company": {
+            "name": "Platzi Academy",
+            "logo": "./assets/platzi.svg",
+            "alt": "Logo de shopify"
+        },
+        "time_period": "2015 - 2018",
+        "job_title": "CSS Course",
+        "job_description": "Completed an extensive course on CSS, mastering layout techniques, responsive design, and animation. Applied new skills to personal and collaborative projects."
+    }
+]
