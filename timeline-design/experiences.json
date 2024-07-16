@@ -33,10 +33,50 @@
         "company": {
             "name": "Platzi Academy",
             "logo": "./assets/platzi.svg",
-            "alt": "Logo de shopify"
+            "alt": "Logo de platzi"
         },
         "time_period": "2015 - 2018",
         "job_title": "CSS Course",
         "job_description": "Completed an extensive course on CSS, mastering layout techniques, responsive design, and animation. Applied new skills to personal and collaborative projects."
+    },
+    {
+        "company": {
+            "name": "PayPal",
+            "logo": "./assets/paypal.svg",
+            "alt": "Logo de paypal"
+        },
+        "time_period": "2021 - 2023",
+        "job_title": "Lead Web Developer",
+        "job_description": "Oversaw development of payment interfaces, optimized transaction flows, and ensured security compliance. Led a team of developers on major updates to the payment platform."
+    },
+    {
+        "company": {
+            "name": "Behance",
+            "logo": "./assets/behance.svg",
+            "alt": "Logo de behance"
+        },
+        "time_period": "2017 - 2021",
+        "job_title": "Senior Product Designer",
+        "job_description": "Designed and prototyped new features for creative portfolios, improved user engagement, and conducted A/B testing. Collaborated with cross-functional teams to deliver high-quality updates."
+    },
+    {
+        "company": {
+            "name": "Adobe",
+            "logo": "./assets/adobe.svg",
+            "alt": "Logo de adobe"
+        },
+        "time_period": "2015 - 2017",
+        "job_title": "UX/UI Designer",
+        "job_description": "Worked on design solutions for Adobe Creative Cloud applications, conducted user research, and enhanced user interfaces. Developed prototypes and conducted usability tests to refine designs."
+    },
+    {
+        "company": {
+            "name": "Mitsubishi",
+            "logo": "./assets/mitsubishi.svg",
+            "alt": "Logo de mitsubishi"
+        },
+        "time_period": "2013 - 2015",
+        "job_title": "Front-End Developer",
+        "job_description": "Developed and maintained web applications, optimized user interfaces for various devices, and collaborated with back-end developers. Implemented responsive designs and improved user experience."
     }
 ]
