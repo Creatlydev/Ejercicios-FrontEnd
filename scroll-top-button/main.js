@@ -23,3 +23,20 @@ scrollBtn.onclick = () => {
     top: 0,
   });
 };
+
+// Obtener todas las palabras con coincidan con HTML || CSS || JAVASCRIPT, para
+// luego envolver cada una de esas palabras en un etiqueta span
+// CASE INSENSITIVE: Osea que le de igual si estan en mayusculas o minusculas
+// Solo de las palabras dentro de las etiquetas <p>
+window.addEventListener('DOMContentLoaded', () => {
+  const paragraphs = document.querySelectorAll('p');
+  const wordsToWrap = ['HTML', 'CSS', 'JavaScript'];
+  const regex = new RegExp(`\\b(${wordsToWrap.join('|')})\\b`, 'gi');
+
+  paragraphs.forEach((p) => {
+    p.innerHTML = p.innerHTML.replace(
+      regex,
+      (match) => `<span>${match}</span>`
+    );
+  });
+});
