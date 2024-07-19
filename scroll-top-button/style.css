@@ -147,3 +147,30 @@ footer {
     background-color: #ccc;
     z-index: 100;
 }
+
+
+
+/* Destacar palabras HTML || CSS || JavaScript */
+.html,
+.css,
+.javascript {
+    display: inline-block;
+    padding: .125em .25em;
+    font-size: .75rem;
+    border-radius: .25em;
+}
+
+.html {
+    background-color: #eb621e;
+    color: #fff;
+}
+
+.css {
+    background-color: #09f;
+    color: #fff;
+}
+
+.javascript {
+    background-color: #ffb800;
+    color: #382702;
+}

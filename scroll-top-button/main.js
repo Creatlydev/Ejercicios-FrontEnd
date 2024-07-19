@@ -36,7 +36,8 @@ window.addEventListener('DOMContentLoaded', () => {
   paragraphs.forEach((p) => {
     p.innerHTML = p.innerHTML.replace(
       regex,
-      (match) => `<span>${match}</span>`
-    );
+      (match) =>
+        `<span class="${match.toLowerCase()}">${match.toLowerCase()}</span>`
+    )
   });
 });
