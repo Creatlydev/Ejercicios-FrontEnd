@@ -158,19 +158,20 @@ footer {
     padding: .125em .25em;
     font-size: .75rem;
     border-radius: .25em;
+    font-weight: 700;
 }
 
 .html {
-    background-color: #eb621e;
-    color: #fff;
+    background-color: rgb(235 98 30 / .2);
+    color: #eb621e;
 }
 
 .css {
-    background-color: #09f;
-    color: #fff;
+    background-color: rgb(0 153 255 / .2);
+    color: #09f;
 }
 
 .javascript {
-    background-color: #ffb800;
-    color: #382702;
+    background-color: rgb(214 166 46 / .2);
+    color: hsl(43, 67%, 51%);
 }
