@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography website cover design</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Bayon&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container  container--header">
+            <div class="logo">
+                <img src="./assets/logo.svg" alt="Logo de la marca">
+            </div>
+            <nav class="navigation">
+                <ul class="nav-list js-nav">
+                    <li class="nav-list__item  is-active">
+                        <a href="#" class="nav-list__item-link">HOME</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#" class="nav-list__item-link">ABOUT</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#" class="nav-list__item-link">SHEDULE</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#" class="nav-list__item-link">EVENTS</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#" class="nav-list__item-link">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="btn-cta  btn-cta--header" hidden>SHEDULE APPOINTMENT</button>
+
+            <button hidden-desktop class="toggle-menu js-btn-menu">
+                <img class="toggle-menu__icon" src="./assets/menu-icon.svg"
+                    alt="Icono para mostrar o ocultar el menu de navegación">
+            </button>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="hero">
+            <div class="container container--hero">
+                <div class="ctm-box ctm-box--hero">
+                    <div>
+                        <span class="ctm-box__rect"></span>
+                        <span class="ctm-box__rect"></span>
+                        <span class="ctm-box__rect"></span>
+                        <span class="ctm-box__rect"></span>
+                    </div>
+
+                    <div class="hero__content">
+                        <div class="hero__description">
+                            <h1 class="hero__title">
+                                Capture The Best Moments.
+                            </h1>
+
+                            <p class="hero__summary">
+                                <span>
+                                    Planning your next event? Make sure to capture all the moments you did not get to be
+                                    a
+                                    part of. Click the link below to
+                                    schedule an appointment today!
+                                </span>
+
+                            <div class="circle" hidden>
+                                <div class="text js-circle-text">CAPTURE THE BEST MOMENTS</div>
+                                <div class="subcircle">
+                                    <img src="./assets/arrow.svg" alt="" class="subcircle-img">
+                                </div>
+                            </div>
+                            </p>
+
+                            <button class="btn-cta btn-cta--hero">SHEDULE APPOINTMENT</button>
+
+                            <div class="ctm-box ctm-box--details details">
+                                <div>
+                                    <span class="ctm-box__rect"></span>
+                                    <span class="ctm-box__rect"></span>
+                                    <span class="ctm-box__rect"></span>
+                                    <span class="ctm-box__rect"></span>
+                                </div>
+
+                                <div class="details__item">
+                                    <img src="./assets/heart.svg" alt="Imagen de un corazon" class="details__img">
+                                    <h2 class="details__title">
+                                        Wedding / Receptions
+                                    </h2>
+
+                                    <p class="details__summary">
+                                        <strong>50+</strong> Weddings and hundreds of satisfied customers. Take a look
+                                        at <a href="#" class="link">our portfolio</a>
+                                    </p>
+                                </div>
+
+                                <span class="divider"></span>
+
+                                <div class="details__item">
+                                    <img src="./assets/calendar.svg" alt="Imagen de un corazon" class="details__img">
+                                    <h2 class="details__title">
+                                        Special Events
+                                    </h2>
+
+                                    <p class="details__summary">
+                                        Also cater to other special events outside of weddings. Call to see how we can
+                                        help.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <img src="./assets/camera.png" alt="Imagen de una camara fotografica" class="hero__graphic">
+                    </div>
+
+                    <footer class="hero__footer">
+                        <h2 class="hero__title">Expertise</h2>
+                        <div class="hero__features features">
+                            <div class="features__item">
+                                <img src="./assets/camera-svg.svg" alt="" class="features__item-img">
+                                <div>
+                                    <h3 class="hero__title features__item-title">
+                                        camera Equipment
+                                    </h3>
+                                    <p class="features__item-info">
+                                        With a broad selections of cameras at our disposal get the right tool for the
+                                        right job.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="features__item">
+                                <img src="./assets/camera-motion.svg" alt="" class="features__item-img">
+                                <div>
+                                    <h3 class="hero__title features__item-title">
+                                        Shutter/motion
+                                    </h3>
+                                    <p class="features__item-info">
+                                        Don’t let lack of expterise and technical problem ruin your shots
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="features__item">
+                                <img src="./assets/lampara.svg" alt="" class="features__item-img">
+                                <div>
+                                    <h3 class="hero__title features__item-title">
+                                        Lighting
+                                    </h3>
+                                    <p class="features__item-info">
+                                        The right moment deserves the right ambiance we got you.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+
+</body>
+
+</html>
