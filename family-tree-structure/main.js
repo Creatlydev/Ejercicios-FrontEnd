@@ -1,6 +1,6 @@
-import { initializeTree } from "/src/modules/initializeTree.js";
+import { initializeTree } from '/src/modules/initializeTree.js'
 
-initializeTree();
+initializeTree()
 
 // DOM element
 let element = document.getElementById('tree')

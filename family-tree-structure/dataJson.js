@@ -1,13 +1,11 @@
 export const data = [
-    {
-        name: 'Samir',
-        relation: 'Yo',
-        position: 'beforeend',
-        img: 1,
-        order: 1,
+  {
+    name: 'Leandro',
+    relation: 'root',
+    position: 'beforeend',
+    img: '1.jpg',
+    order: 1,
 
-        parents: [
-            
-        ]
-    }
+    parents: []
+  }
 ]   
