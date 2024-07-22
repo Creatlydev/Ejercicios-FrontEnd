@@ -67,11 +67,11 @@ h2>span {
 }
 
 .slider:hover .slider__track {
-    animation-play-state: paused!important;
+    animation-play-state: paused;
 }
 
 .slider__item {
-    width: 150px;
+    width: 100px;
     margin-inline: 2rem;
 }
 
@@ -85,10 +85,6 @@ h2>span {
 
 
 @keyframes slider {
-    from {
-        transform: translateX(0);
-    }
-
     to {
         transform: translateX(-100%);
     }
